@@ -1,0 +1,87 @@
+/*Primero dibujamos el cuadrado:*/
+
+.love {
+    position: absolute;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg);
+    background: red;
+    margin-top: 250px;    
+    margin-left:450px;
+  }
+/*se agrega las propiedades necesarias para dibujar el par de círculos:*/
+.love:before,
+.love:after {
+  position: absolute;
+  content: "";
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: red;
+  
+  
+}
+/*modificamos la posición de cada una de estas figuras para poder darle forma a nuestro corazón.*/
+.love {
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg);
+    background: red;
+    position: relative;
+    top: 10rem;
+    left: 10rem;
+  }
+  
+  .love:before,
+  .love:after {
+    content: "";
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: red;
+    position: absolute;
+  }
+  
+  .love:before {
+    top: 0;
+    left: -25px;
+  }
+  
+  .love:after {
+    top: -25px;
+  }
+
+  /*animacion de latido*/
+  .love {
+    width: 50px;
+    height: 50px;
+    transform: rotate(45deg);
+    background: red;
+    position: relative;
+    top: 10rem;
+    left: 10rem;
+    animation: beating 2s ease infinite;
+  }
+
+  .love:before,
+  .love:after,
+  .love {
+    display:grid;
+    justify-content: center;
+    
+  }
+  
+  @keyframes beating {
+    0% {
+      transform: rotate(45deg) scale(1);
+    }
+    50% {
+      transform: rotate(45deg) scale(2);
+    }
+    100% {
+      transform: rotate(45deg) scale(1);
+    }
+  }
